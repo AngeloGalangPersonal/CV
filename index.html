@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Angelo Galang - Operations, SEO, Customer Success, and Account Management professional." />
+  <title>Angelo Galang | Operations, SEO & Customer Success</title>
+  <style>
+    :root {
+      --bg: #f3eeeb;
+      --paper: #fffdfb;
+      --ink: #211922;
+      --muted: #6f625f;
+      --line: #eadfd9;
+      --dark: #1f171e;
+      --dark-2: #352b38;
+      --warm: #905c4b;
+      --sand: #f4e9e4;
+      --cream: #fff8f3;
+      --accent: #c18a77;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(193, 138, 119, 0.30) 0, transparent 34%),
+        linear-gradient(180deg, #f8f1ed 0%, #f3eeeb 45%, #fffdfb 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .page { overflow: hidden; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 253, 251, 0.78);
+      border-bottom: 1px solid rgba(234, 223, 217, 0.78);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: var(--cream);
+      background: linear-gradient(135deg, var(--dark), var(--warm));
+      border-radius: 14px;
+      font-size: 14px;
+      box-shadow: 0 12px 28px rgba(53, 43, 56, 0.16);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .nav-links a:hover { color: var(--warm); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      color: var(--cream);
+      background: linear-gradient(135deg, var(--dark), var(--warm));
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 16px 34px rgba(53, 43, 56, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(53, 43, 56, 0.24); }
+    .button.secondary { color: var(--dark); background: rgba(255, 253, 251, 0.72); border: 1px solid var(--line); box-shadow: none; }
+
+    .hero { padding: 74px 0 56px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) 430px; align-items: center; gap: 54px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      color: var(--warm);
+      background: rgba(255, 248, 243, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--warm); border-radius: 999px; }
+
+    h1 {
+      margin: 0;
+      color: var(--dark);
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+    }
+    .hero-title span { display: block; color: var(--warm); }
+    .hero-copy { max-width: 640px; margin: 24px 0 28px; color: #4a3f3d; font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+
+    .hero-card {
+      position: relative;
+      padding: 16px;
+      background: rgba(255, 253, 251, 0.72);
+      border: 1px solid rgba(144, 92, 75, 0.18);
+      border-radius: 34px;
+      box-shadow: 0 28px 80px rgba(53, 43, 56, 0.18);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -18px -18px auto;
+      width: 160px;
+      height: 160px;
+      background: rgba(193, 138, 119, 0.25);
+      border-radius: 999px;
+      z-index: -1;
+    }
+    .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 26px; background: var(--warm); }
+    .hero-badge {
+      position: absolute;
+      left: -20px;
+      bottom: 34px;
+      max-width: 220px;
+      padding: 16px;
+      color: var(--cream);
+      background: linear-gradient(135deg, var(--dark), var(--dark-2));
+      border: 1px solid rgba(255, 248, 243, 0.18);
+      border-radius: 22px;
+      box-shadow: 0 18px 38px rgba(33, 25, 34, 0.28);
+    }
+    .hero-badge strong { display: block; margin-bottom: 3px; font-size: 15px; }
+    .hero-badge span { color: #f0c7b8; font-size: 12px; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; }
+    .stat-card { padding: 20px; background: rgba(255, 253, 251, 0.78); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 12px 30px rgba(53, 43, 56, 0.055); }
+    .stat-card strong { display: block; color: var(--dark); font-size: 26px; line-height: 1; letter-spacing: -0.04em; }
+    .stat-card span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
+
+    .section { padding: 56px 0; }
+    .section-heading { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 34px; align-items: end; margin-bottom: 28px; }
+    .section-label { margin: 0 0 10px; color: var(--warm); font-size: 13px; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
+    h2 { margin: 0; color: var(--dark); font-size: clamp(30px, 4vw, 48px); line-height: 1.02; letter-spacing: -0.06em; }
+    .section-intro { margin: 0; color: var(--muted); font-size: 16px; }
+
+    .logo-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 30px; }
+    .logo-card { display: grid; place-items: center; min-height: 92px; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 12px 30px rgba(53, 43, 56, 0.055); }
+    .logo-card img { max-width: 135px; max-height: 48px; object-fit: contain; }
+    .logo-card .kd-logo { display: grid; place-items: center; width: 56px; height: 56px; color: var(--cream); background: linear-gradient(135deg, var(--dark), var(--warm)); border-radius: 18px; font-weight: 900; letter-spacing: -0.04em; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .skill-card, .experience-card, .education-card { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; box-shadow: 0 16px 44px rgba(53, 43, 56, 0.06); }
+    .skill-card { padding: 22px; min-height: 190px; }
+    .skill-number { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 18px; color: var(--warm); background: var(--sand); border-radius: 15px; font-weight: 900; }
+    .skill-card h3 { margin: 0 0 10px; color: var(--dark); font-size: 17px; letter-spacing: -0.025em; }
+    .skill-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .experience-list { display: grid; gap: 18px; }
+    .experience-card { padding: 24px; }
+    .experience-top { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: start; margin-bottom: 14px; }
+    .company-lockup { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    .company-logo { width: 44px; height: 44px; object-fit: contain; flex: 0 0 44px; padding: 7px; background: #fffaf7; border: 1px solid var(--line); border-radius: 14px; }
+    .company-logo-wide { width: 94px; height: 40px; object-fit: contain; flex: 0 0 94px; padding: 6px 8px; background: #fffaf7; border: 1px solid var(--line); border-radius: 14px; }
+    .company-logo-text { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; color: var(--cream); background: linear-gradient(135deg, var(--dark), var(--warm)); border-radius: 14px; font-size: 14px; font-weight: 900; letter-spacing: -0.04em; }
+    .company-name { margin: 0; color: var(--dark); font-size: 22px; line-height: 1.05; letter-spacing: -0.045em; }
+    .role-title { margin: 5px 0 0; color: var(--warm); font-size: 14px; font-weight: 800; }
+    .date { display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px; color: #6f3f34; background: var(--sand); border-radius: 999px; font-size: 12px; font-weight: 850; white-space: nowrap; }
+    .experience-card ul { display: grid; gap: 8px; margin: 0; padding-left: 20px; }
+    .experience-card li { color: #5f5552; font-size: 14px; }
+    .experience-card li::marker { color: var(--warm); }
+
+    .additional-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .education-card { padding: 26px; }
+    .education-card h3 { margin: 0 0 6px; color: var(--dark); font-size: 22px; letter-spacing: -0.04em; }
+    .education-card p { margin: 0; color: var(--muted); }
+
+    .cta { padding: 74px 0 84px; }
+    .cta-card { display: grid; grid-template-columns: 1.2fr auto; gap: 28px; align-items: center; padding: 36px; color: var(--cream); background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 54%, var(--warm) 140%); border-radius: 34px; box-shadow: 0 24px 70px rgba(53, 43, 56, 0.20); }
+    .cta-card h2 { color: var(--cream); margin-bottom: 12px; }
+    .cta-card p { max-width: 650px; margin: 0; color: #f0c7b8; }
+    .cta-card .button { color: var(--dark); background: var(--cream); box-shadow: none; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .section-heading, .cta-card { grid-template-columns: 1fr; }
+      .hero-card { max-width: 460px; }
+      .stats, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .logo-strip { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-links { display: none; }
+      .hero { padding-top: 48px; }
+      .hero-grid { gap: 34px; }
+      .hero-badge { position: static; max-width: none; margin-top: 12px; }
+      .stats, .skills-grid, .logo-strip, .additional-layout { grid-template-columns: 1fr; }
+      .experience-top { grid-template-columns: 1fr; }
+      .date { width: fit-content; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="brand" aria-label="Angelo Galang homepage">
+          <span class="brand-mark">AG</span>
+          <span>Angelo Galang</span>
+        </a>
+        <div class="nav-links" aria-label="Page navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">Operations | SEO | Customer Success</div>
+          <h1 class="hero-title">I build systems that turn marketing goals <span>into execution.</span></h1>
+          <p class="hero-copy">
+            I’m Angelo Galang, an operations, SEO, and customer success professional with experience leading teams, managing client relationships, improving delivery workflows, and supporting technical and marketing operations.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:dauntless.angelo0211@gmail.com">Contact Me</a>
+            <a class="button secondary" href="#experience">View Experience</a>
+          </div>
+
+          <div class="stats" aria-label="Career highlights">
+            <div class="stat-card">
+              <strong>8+</strong>
+              <span>Years across operations, accounts, and customer success</span>
+            </div>
+            <div class="stat-card">
+              <strong>60</strong>
+              <span>Average active projects or campaigns managed at SEOReseller</span>
+            </div>
+            <div class="stat-card">
+              <strong>SEO</strong>
+              <span>Audits, technical fixes, content strategy, and reporting</span>
+            </div>
+            <div class="stat-card">
+              <strong>CS</strong>
+              <span>Client onboarding, retention support, and communication</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Profile photo">
+          <img class="portrait" src="assets/profile.png" alt="Portrait of Angelo Galang" />
+          <div class="hero-badge">
+            <strong>Founder / SEO Consultant</strong>
+            <span>Kitana.Digital — independent SEO business</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">About</p>
+              <h2>Leadership, strategy, and delivery in one profile.</h2>
+            </div>
+            <p class="section-intro">
+              My background combines SEO delivery, account management, customer success, technical support, team leadership, business operations, and client communication. I help bridge the gap between strategy and execution so teams can deliver consistent, client-ready work.
+            </p>
+          </div>
+
+          <div class="logo-strip" aria-label="Companies represented in Angelo Galang's experience">
+            <div class="logo-card"><img src="assets/qball-logo.png" alt="QBall Digital logo" /></div>
+            <div class="logo-card"><span class="kd-logo">KD</span></div>
+            <div class="logo-card"><img src="assets/seoreseller-logo.png" alt="SEOReseller.com logo" /></div>
+            <div class="logo-card"><img src="assets/tdcx-logo.png" alt="TDCX logo" /></div>
+            <div class="logo-card"><img src="assets/alorica-logo.png" alt="Alorica logo" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Capabilities</p>
+              <h2>Core skills across SEO, client success, and operations.</h2>
+            </div>
+            <p class="section-intro">A practical mix of marketing execution, process improvement, team management, and client-facing communication.</p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card"><div class="skill-number">01</div><h3>SEO & Marketing</h3><p>SEO audits, technical SEO, on-page SEO, keyword research, content strategy, local SEO, and email campaigns.</p></article>
+            <article class="skill-card"><div class="skill-number">02</div><h3>Client Success & Accounts</h3><p>Client communication, onboarding, account management, retention support, and stakeholder coordination.</p></article>
+            <article class="skill-card"><div class="skill-number">03</div><h3>Operations & Leadership</h3><p>Team management, workflow improvement, quality control, SLA monitoring, coaching, and multi-project management.</p></article>
+            <article class="skill-card"><div class="skill-number">04</div><h3>Tools & Technical</h3><p>Google Search Console, GA4, Semrush, Mixpanel, Stripe API fundamentals, web design, and LLM fluency.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="section-label">Experience</p><h2>Career timeline focused on growth and execution.</h2></div>
+            <p class="section-intro">Experience across agency operations, SEO delivery, account management, technical onboarding, and customer service leadership.</p>
+          </div>
+
+          <div class="experience-list">
+            <article class="experience-card">
+              <div class="experience-top"><div class="company-lockup"><img class="company-logo" src="assets/qball-logo.png" alt="QBall Digital logo" /><div><h3 class="company-name">QBall Digital</h3><p class="role-title">Operations Manager / Former Head of SEO</p></div></div><span class="date">April 2023 - June 2026</span></div>
+              <ul><li>Managed SEO delivery, client outputs, and performance-related workflows across internal teams and front-facing departments.</li><li>Oversaw SEO execution, including technical recommendations, on-page improvements, reporting support, quality control, and process documentation.</li><li>Improved SEO systems and workflows by adapting internal processes to current search trends, client needs, and delivery requirements.</li><li>Monitored team workload, output quality, and service-level expectations to ensure timely and consistent completion of deliverables.</li><li>Coached team members through feedback, performance guidance, and process support to improve execution quality and professional growth.</li><li>Joined client meetings to align on campaign priorities, communicate progress, and ensure marketing outputs matched client objectives.</li><li>Supported client success through proactive account management, delivery follow-through, and clear communication with stakeholders.</li></ul>
+            </article>
+
+            <article class="experience-card">
+              <div class="experience-top"><div class="company-lockup"><span class="company-logo-text">KD</span><div><h3 class="company-name">Kitana.Digital</h3><p class="role-title">Founder / SEO Consultant</p></div></div><span class="date">Present</span></div>
+              <ul><li>Founded and operate an independent SEO business providing strategy, audits, optimization, and reporting services for clients.</li><li>Manage the full client engagement process, including discovery, SEO planning, execution, performance tracking, and monthly communication.</li><li>Conduct comprehensive SEO audits and build goal-focused strategies based on technical, content, and local search opportunities.</li><li>Handle technical SEO fixes, on-page optimization, metadata updates, internal linking improvements, and website performance recommendations.</li><li>Plan content strategies through keyword research, search intent analysis, blog outlines, content briefs, and page update recommendations.</li><li>Manage local SEO tasks including citation building, Google Business Profile optimization, local landing page improvements, and backlink opportunities.</li><li>Track performance using Google Search Console, GA4, and Semrush, then prepare monthly reports with insights, recommendations, and next-step priorities.</li></ul>
+            </article>
+
+            <article class="experience-card">
+              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/seoreseller-logo.png" alt="SEOReseller.com logo" /><div><h3 class="company-name">SEOReseller.com</h3><p class="role-title">Account Manager</p></div></div><span class="date">October 2022 - April 2023</span></div>
+              <ul><li>Built, maintained, and strengthened relationships with clients, partners, and internal stakeholders through strategic communication and marketing support.</li><li>Assisted in developing business and marketing strategies aligned with partner needs, campaign goals, and service deliverables.</li><li>Coordinated with internal teams to monitor employee progress, task completion, and timely delivery of client requirements.</li><li>Managed an average of 60 active projects or campaigns while balancing deadlines, partner expectations, and internal production capacity.</li><li>Facilitated deliverable completion for partners and clients, ensuring campaign requirements were properly communicated and executed.</li><li>Supported price negotiations, business discussions, and deal coordination with partners and stakeholders.</li></ul>
+            </article>
+
+            <article class="experience-card">
+              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/tdcx-logo.png" alt="TDCX logo" /><div><h3 class="company-name">TDCX Malaysia, Kuala Lumpur</h3><p class="role-title">Senior Account Executive</p></div></div><span class="date">November 2019 - November 2022</span></div>
+              <ul><li>Managed and onboarded new clients by explaining the payment process, product workflows, and service expectations.</li><li>Delivered API integration-related presentations to help clients understand how to use available products and services.</li><li>Supported Tier 1 agents by providing product knowledge, technical guidance, and escalation support for complex customer questions.</li><li>Handled advanced product knowledge escalations using online IT tools, browsers, and internal resources to provide accurate solutions.</li><li>Applied Stripe API fundamentals to support troubleshooting, identify integration issues, and assist with product-related debugging.</li></ul>
+            </article>
+
+            <article class="experience-card">
+              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/alorica-logo.png" alt="Alorica logo" /><div><h3 class="company-name">Alorica</h3><p class="role-title">Team Leader / Manager</p></div></div><span class="date">July 2017 - September 2019</span></div>
+              <ul><li>Supervised and mentored customer service agents to maintain strong performance, quality standards, and service consistency.</li><li>Monitored call metrics and provided coaching to improve efficiency, customer satisfaction, and resolution times.</li><li>Handled escalated customer inquiries and resolved complex issues in a timely and professional manner.</li><li>Conducted regular training sessions to strengthen team skills, product knowledge, and customer service execution.</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="additional">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="section-label">Additional Experience</p><h2>Customer success and business intelligence support.</h2></div>
+            <p class="section-intro">Sitekick.ai is positioned separately to keep the primary career timeline clean while still showing relevant customer success and operations experience.</p>
+          </div>
+          <div class="additional-layout">
+            <article class="experience-card">
+              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/sitekick-logo.webp" alt="Sitekick.ai logo" /><div><h3 class="company-name">Sitekick.ai</h3><p class="role-title">Customer Success Manager</p></div></div><span class="date">June 2023 - October 2024</span></div>
+              <ul><li>Oversaw daily customer success operations, including discount requests, refunds, cancellations, and customer issue resolution.</li><li>Supported business operations in a quasi-COO capacity by coordinating customer-facing processes and improving operational follow-through.</li><li>Executed targeted email campaigns and outreach initiatives for promotions, customer engagement, and marketing support.</li><li>Led the development of customer-facing documentation, FAQs, and support resources to improve product understanding and reduce repeated inquiries.</li><li>Analyzed customer behavior and product data in Mixpanel to generate business intelligence insights and identify opportunities for improvement.</li></ul>
+            </article>
+            <article class="education-card"><p class="section-label">Education</p><h3>Bachelor's Degree in Mass Communication</h3><p>STI College Novaliches</p><p>2013 - 2017</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-card">
+          <div><h2>Let’s connect.</h2><p>Available for conversations around SEO operations, account management, customer success, and business process improvement.</p></div>
+          <a class="button" href="mailto:dauntless.angelo0211@gmail.com">dauntless.angelo0211@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

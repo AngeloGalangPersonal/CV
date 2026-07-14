@@ -1,403 +1,796 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Angelo Galang - Operations, SEO, Customer Success, and Account Management professional." />
-  <title>Angelo Galang | Operations, SEO & Customer Success</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of Angelo Galang, an SEO Project Manager and Operations professional with eight years of total work experience and four years in SEO and digital marketing.">
+  <meta name="author" content="Angelo Galang">
+  <title>Angelo Galang | SEO Project Manager & Operations</title>
   <style>
     :root {
-      --bg: #f3eeeb;
-      --paper: #fffdfb;
-      --ink: #211922;
-      --muted: #6f625f;
-      --line: #eadfd9;
-      --dark: #1f171e;
-      --dark-2: #352b38;
-      --warm: #905c4b;
-      --sand: #f4e9e4;
-      --cream: #fff8f3;
-      --accent: #c18a77;
+      --ink: #2b252c;
+      --muted: #6f6060;
+      --line: #e7d8d1;
+      --soft: #f7efeb;
+      --accent: #8f5b4a;
+      --accent-dark: #6f4438;
       --white: #ffffff;
+      --shadow: 0 18px 50px rgba(80, 50, 46, 0.14);
+      --radius: 18px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(193, 138, 119, 0.30) 0, transparent 34%),
-        linear-gradient(180deg, #f8f1ed 0%, #f3eeeb 45%, #fffdfb 100%);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #efe5e0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .page { overflow: hidden; }
-    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 253, 251, 0.78);
-      border-bottom: 1px solid rgba(234, 223, 217, 0.78);
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
     }
 
-    .nav-inner {
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .topbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      min-height: 74px;
-      gap: 24px;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 42px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 252, 250, 0.96);
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 850;
-      letter-spacing: -0.03em;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .brand-mark {
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
-      color: var(--cream);
-      background: linear-gradient(135deg, var(--dark), var(--warm));
-      border-radius: 14px;
-      font-size: 14px;
-      box-shadow: 0 12px 28px rgba(53, 43, 56, 0.16);
+      border-radius: 10px;
+      color: var(--white);
+      background: var(--ink);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
     }
 
-    .nav-links {
+    .top-actions {
       display: flex;
       align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 650;
+      gap: 16px;
+      font-size: 0.92rem;
     }
-    .nav-links a:hover { color: var(--warm); }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      color: var(--cream);
-      background: linear-gradient(135deg, var(--dark), var(--warm));
+    .print-button {
+      border: 0;
       border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: 0 16px 34px rgba(53, 43, 56, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 10px 16px;
+      color: var(--white);
+      background: var(--accent);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
     }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(53, 43, 56, 0.24); }
-    .button.secondary { color: var(--dark); background: rgba(255, 253, 251, 0.72); border: 1px solid var(--line); box-shadow: none; }
 
-    .hero { padding: 74px 0 56px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) 430px; align-items: center; gap: 54px; }
+    .print-button:hover,
+    .print-button:focus {
+      background: var(--accent-dark);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.45fr 0.75fr;
+      gap: 48px;
+      padding: 58px 56px 48px;
+      background:
+        radial-gradient(circle at 91% 12%, rgba(143, 91, 74, 0.22), transparent 30%),
+        linear-gradient(180deg, #fffdfc 0%, #f8efeb 100%);
+    }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      padding: 8px 12px;
-      color: var(--warm);
-      background: rgba(255, 248, 243, 0.78);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 13px;
+      margin: 0 0 10px;
+      color: var(--accent-dark);
+      font-size: 0.84rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
-    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--warm); border-radius: 999px; }
 
     h1 {
       margin: 0;
-      color: var(--dark);
-      font-size: clamp(46px, 7vw, 82px);
-      line-height: 0.95;
-      letter-spacing: -0.075em;
+      max-width: 760px;
+      font-size: clamp(2.5rem, 5.4vw, 4.9rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
     }
-    .hero-title span { display: block; color: var(--warm); }
-    .hero-copy { max-width: 640px; margin: 24px 0 28px; color: #4a3f3d; font-size: 18px; }
-    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+
+    .headline {
+      margin: 20px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .hero-side {
+      align-self: start;
+      display: grid;
+      gap: 16px;
+    }
+
+    .profile-photo {
+      margin: 0;
+      padding: 7px;
+      overflow: hidden;
+      border: 1px solid rgba(143, 91, 74, 0.24);
+      border-radius: 20px;
+      background: rgba(255, 252, 250, 0.92);
+      box-shadow: 0 18px 42px rgba(80, 50, 46, 0.16);
+    }
+
+    .profile-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center 28%;
+      border-radius: 14px;
+    }
 
     .hero-card {
-      position: relative;
-      padding: 16px;
-      background: rgba(255, 253, 251, 0.72);
-      border: 1px solid rgba(144, 92, 75, 0.18);
-      border-radius: 34px;
-      box-shadow: 0 28px 80px rgba(53, 43, 56, 0.18);
+      align-self: start;
+      padding: 28px;
+      border: 1px solid rgba(143, 91, 74, 0.24);
+      border-radius: 16px;
+      background: rgba(255, 252, 250, 0.90);
+      box-shadow: 0 14px 35px rgba(80, 50, 46, 0.12);
     }
-    .hero-card::before {
+
+    .metric {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric:first-child {
+      padding-top: 0;
+    }
+
+    .metric:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 1.15;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 0.72fr 1.5fr;
+      gap: 54px;
+      padding: 48px 56px 64px;
+    }
+
+    aside {
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: 38px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.12rem;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 3px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.23rem;
+      letter-spacing: -0.02em;
+    }
+
+    .small-copy,
+    .section p {
+      color: var(--muted);
+    }
+
+    .skill-list,
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li,
+    .tool-list li {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+      font-size: 0.84rem;
+      font-weight: 650;
+    }
+
+    .education-card,
+    .writing-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fcf8f6;
+    }
+
+    .education-card strong,
+    .writing-card strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .experience-item {
+      position: relative;
+      padding: 0 0 34px 28px;
+      border-left: 2px solid var(--line);
+    }
+
+    .experience-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .experience-item::before {
       content: "";
       position: absolute;
-      inset: auto -18px -18px auto;
-      width: 160px;
-      height: 160px;
-      background: rgba(193, 138, 119, 0.25);
-      border-radius: 999px;
-      z-index: -1;
-    }
-    .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 26px; background: var(--warm); }
-    .hero-badge {
-      position: absolute;
-      left: -20px;
-      bottom: 34px;
-      max-width: 220px;
-      padding: 16px;
-      color: var(--cream);
-      background: linear-gradient(135deg, var(--dark), var(--dark-2));
-      border: 1px solid rgba(255, 248, 243, 0.18);
-      border-radius: 22px;
-      box-shadow: 0 18px 38px rgba(33, 25, 34, 0.28);
-    }
-    .hero-badge strong { display: block; margin-bottom: 3px; font-size: 15px; }
-    .hero-badge span { color: #f0c7b8; font-size: 12px; }
-
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; }
-    .stat-card { padding: 20px; background: rgba(255, 253, 251, 0.78); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 12px 30px rgba(53, 43, 56, 0.055); }
-    .stat-card strong { display: block; color: var(--dark); font-size: 26px; line-height: 1; letter-spacing: -0.04em; }
-    .stat-card span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
-
-    .section { padding: 56px 0; }
-    .section-heading { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 34px; align-items: end; margin-bottom: 28px; }
-    .section-label { margin: 0 0 10px; color: var(--warm); font-size: 13px; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
-    h2 { margin: 0; color: var(--dark); font-size: clamp(30px, 4vw, 48px); line-height: 1.02; letter-spacing: -0.06em; }
-    .section-intro { margin: 0; color: var(--muted); font-size: 16px; }
-
-    .logo-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 30px; }
-    .logo-card { display: grid; place-items: center; min-height: 92px; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 12px 30px rgba(53, 43, 56, 0.055); }
-    .logo-card img { max-width: 135px; max-height: 48px; object-fit: contain; }
-    .logo-card .kd-logo { display: grid; place-items: center; width: 56px; height: 56px; color: var(--cream); background: linear-gradient(135deg, var(--dark), var(--warm)); border-radius: 18px; font-weight: 900; letter-spacing: -0.04em; }
-
-    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .skill-card, .experience-card, .education-card { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; box-shadow: 0 16px 44px rgba(53, 43, 56, 0.06); }
-    .skill-card { padding: 22px; min-height: 190px; }
-    .skill-number { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 18px; color: var(--warm); background: var(--sand); border-radius: 15px; font-weight: 900; }
-    .skill-card h3 { margin: 0 0 10px; color: var(--dark); font-size: 17px; letter-spacing: -0.025em; }
-    .skill-card p { margin: 0; color: var(--muted); font-size: 14px; }
-
-    .experience-list { display: grid; gap: 18px; }
-    .experience-card { padding: 24px; }
-    .experience-top { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: start; margin-bottom: 14px; }
-    .company-lockup { display: flex; align-items: center; gap: 14px; min-width: 0; }
-    .company-logo { width: 44px; height: 44px; object-fit: contain; flex: 0 0 44px; padding: 7px; background: #fffaf7; border: 1px solid var(--line); border-radius: 14px; }
-    .company-logo-wide { width: 94px; height: 40px; object-fit: contain; flex: 0 0 94px; padding: 6px 8px; background: #fffaf7; border: 1px solid var(--line); border-radius: 14px; }
-    .company-logo-text { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; color: var(--cream); background: linear-gradient(135deg, var(--dark), var(--warm)); border-radius: 14px; font-size: 14px; font-weight: 900; letter-spacing: -0.04em; }
-    .company-name { margin: 0; color: var(--dark); font-size: 22px; line-height: 1.05; letter-spacing: -0.045em; }
-    .role-title { margin: 5px 0 0; color: var(--warm); font-size: 14px; font-weight: 800; }
-    .date { display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px; color: #6f3f34; background: var(--sand); border-radius: 999px; font-size: 12px; font-weight: 850; white-space: nowrap; }
-    .experience-card ul { display: grid; gap: 8px; margin: 0; padding-left: 20px; }
-    .experience-card li { color: #5f5552; font-size: 14px; }
-    .experience-card li::marker { color: var(--warm); }
-
-    .additional-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .education-card { padding: 26px; }
-    .education-card h3 { margin: 0 0 6px; color: var(--dark); font-size: 22px; letter-spacing: -0.04em; }
-    .education-card p { margin: 0; color: var(--muted); }
-
-    .cta { padding: 74px 0 84px; }
-    .cta-card { display: grid; grid-template-columns: 1.2fr auto; gap: 28px; align-items: center; padding: 36px; color: var(--cream); background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 54%, var(--warm) 140%); border-radius: 34px; box-shadow: 0 24px 70px rgba(53, 43, 56, 0.20); }
-    .cta-card h2 { color: var(--cream); margin-bottom: 12px; }
-    .cta-card p { max-width: 650px; margin: 0; color: #f0c7b8; }
-    .cta-card .button { color: var(--dark); background: var(--cream); box-shadow: none; }
-
-    @media (max-width: 980px) {
-      .hero-grid, .section-heading, .cta-card { grid-template-columns: 1fr; }
-      .hero-card { max-width: 460px; }
-      .stats, .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .logo-strip { grid-template-columns: repeat(3, 1fr); }
+      top: 4px;
+      left: -7px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
     }
 
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, 1160px); }
-      .nav-links { display: none; }
-      .hero { padding-top: 48px; }
-      .hero-grid { gap: 34px; }
-      .hero-badge { position: static; max-width: none; margin-top: 12px; }
-      .stats, .skills-grid, .logo-strip, .additional-layout { grid-template-columns: 1fr; }
-      .experience-top { grid-template-columns: 1fr; }
-      .date { width: fit-content; }
+    .role-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 22px;
+      margin-bottom: 6px;
+    }
+
+    .company {
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    .date {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .experience-item ul {
+      margin: 12px 0 0;
+      padding-left: 19px;
+    }
+
+    .experience-item li {
+      margin-bottom: 8px;
+      color: #4b3f42;
+    }
+
+    .experience-item li:last-child {
+      margin-bottom: 0;
+    }
+
+    .fit-box {
+      margin-top: 22px;
+      padding: 22px;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      background: var(--soft);
+    }
+
+    .fit-box p {
+      margin: 0;
+      color: #4b3f42;
+    }
+
+    .footer {
+      padding: 22px 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fcf8f6;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .topbar,
+      .hero,
+      .content {
+        padding-left: 26px;
+        padding-right: 26px;
+      }
+
+      .hero,
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 30px;
+      }
+
+      .hero-side {
+        grid-template-columns: minmax(170px, 0.75fr) 1fr;
+        align-items: stretch;
+      }
+
+      .profile-photo img {
+        height: 100%;
+        aspect-ratio: auto;
+      }
+
+      .content {
+        gap: 18px;
+      }
+
+      .role-row {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .top-actions a {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .topbar {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      h1 {
+        font-size: 2.65rem;
+      }
+
+      .hero-side {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        max-width: 330px;
+      }
+
+      .profile-photo img {
+        aspect-ratio: 1 / 1;
+        height: auto;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 11mm;
+      }
+
+      body {
+        background: var(--white);
+        font-size: 10.2pt;
+        line-height: 1.42;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .topbar,
+      .print-button,
+      .footer {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1.55fr 0.65fr;
+        gap: 24px;
+        padding: 0 0 24px;
+        background: none;
+      }
+
+      h1 {
+        font-size: 31pt;
+      }
+
+      .headline {
+        font-size: 10.5pt;
+      }
+
+      .hero-side {
+        gap: 8px;
+      }
+
+      .profile-photo {
+        width: 118px;
+        justify-self: end;
+        padding: 3px;
+        border-radius: 10px;
+        box-shadow: none;
+      }
+
+      .profile-photo img {
+        border-radius: 7px;
+      }
+
+      .hero-card {
+        padding: 15px;
+        box-shadow: none;
+      }
+
+      .metric {
+        padding: 9px 0;
+      }
+
+      .metric strong {
+        font-size: 14pt;
+      }
+
+      .content {
+        grid-template-columns: 0.72fr 1.5fr;
+        gap: 28px;
+        padding: 22px 0 0;
+      }
+
+      .section {
+        margin-bottom: 24px;
+      }
+
+      .experience-item {
+        padding-bottom: 22px;
+        break-inside: avoid;
+      }
+
+      .skill-list li,
+      .tool-list li {
+        padding: 4px 6px;
+        font-size: 8.2pt;
+      }
+
+      a {
+        color: var(--ink);
+        text-decoration: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <nav class="nav">
-      <div class="container nav-inner">
-        <a href="#top" class="brand" aria-label="Angelo Galang homepage">
-          <span class="brand-mark">AG</span>
-          <span>Angelo Galang</span>
-        </a>
-        <div class="nav-links" aria-label="Page navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand" aria-label="Angelo Galang">
+        <span class="brand-mark">AG</span>
+        <span>Angelo Galang</span>
       </div>
-    </nav>
-
-    <header class="hero" id="top">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="eyebrow">Operations | SEO | Customer Success</div>
-          <h1 class="hero-title">I build systems that turn marketing goals <span>into execution.</span></h1>
-          <p class="hero-copy">
-            I’m Angelo Galang, an operations, SEO, and customer success professional with experience leading teams, managing client relationships, improving delivery workflows, and supporting technical and marketing operations.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="mailto:dauntless.angelo0211@gmail.com">Contact Me</a>
-            <a class="button secondary" href="#experience">View Experience</a>
-          </div>
-
-          <div class="stats" aria-label="Career highlights">
-            <div class="stat-card">
-              <strong>8+</strong>
-              <span>Years across operations, accounts, and customer success</span>
-            </div>
-            <div class="stat-card">
-              <strong>60</strong>
-              <span>Average active projects or campaigns managed at SEOReseller</span>
-            </div>
-            <div class="stat-card">
-              <strong>SEO</strong>
-              <span>Audits, technical fixes, content strategy, and reporting</span>
-            </div>
-            <div class="stat-card">
-              <strong>CS</strong>
-              <span>Client onboarding, retention support, and communication</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-card" aria-label="Profile photo">
-          <img class="portrait" src="assets/profile.png" alt="Portrait of Angelo Galang" />
-          <div class="hero-badge">
-            <strong>Founder / SEO Consultant</strong>
-            <span>Kitana.Digital — independent SEO business</span>
-          </div>
-        </div>
+      <div class="top-actions">
+        <a href="mailto:dauntless.angelo0211@gmail.com">dauntless.angelo0211@gmail.com</a>
+        <button class="print-button" type="button" onclick="window.print()">Print / Save PDF</button>
       </div>
     </header>
 
-    <main>
-      <section class="section" id="about">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">About</p>
-              <h2>Leadership, strategy, and delivery in one profile.</h2>
-            </div>
-            <p class="section-intro">
-              My background combines SEO delivery, account management, customer success, technical support, team leadership, business operations, and client communication. I help bridge the gap between strategy and execution so teams can deliver consistent, client-ready work.
-            </p>
-          </div>
-
-          <div class="logo-strip" aria-label="Companies represented in Angelo Galang's experience">
-            <div class="logo-card"><img src="assets/qball-logo.png" alt="QBall Digital logo" /></div>
-            <div class="logo-card"><span class="kd-logo">KD</span></div>
-            <div class="logo-card"><img src="assets/seoreseller-logo.png" alt="SEOReseller.com logo" /></div>
-            <div class="logo-card"><img src="assets/tdcx-logo.png" alt="TDCX logo" /></div>
-            <div class="logo-card"><img src="assets/alorica-logo.png" alt="Alorica logo" /></div>
-          </div>
+    <section class="hero" aria-labelledby="resume-title">
+      <div>
+        <p class="eyebrow">SEO Project Manager · Operations · Client Delivery</p>
+        <h1 id="resume-title">Angelo Galang</h1>
+        <p class="headline">
+          Operations and SEO project management professional with eight years of total work experience, including four years in SEO and digital marketing. I build clear systems, keep teams aligned, identify bottlenecks early, and help make sure client work is completed properly and on time.
+        </p>
+        <div class="contact-row" aria-label="Contact information">
+          <span>Philippines · Remote</span>
+          <a href="mailto:dauntless.angelo0211@gmail.com">Email</a>
+          <a href="https://kitana.digital/" target="_blank" rel="noopener">Kitana.Digital</a>
+          <a href="https://angelogalangpersonal.github.io/CV/" target="_blank" rel="noopener">Online Resume</a>
         </div>
-      </section>
+      </div>
 
-      <section class="section" id="skills">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">Capabilities</p>
-              <h2>Core skills across SEO, client success, and operations.</h2>
-            </div>
-            <p class="section-intro">A practical mix of marketing execution, process improvement, team management, and client-facing communication.</p>
+      <div class="hero-side">
+        <figure class="profile-photo">
+          <img src="data:image/webp;base64,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" alt="Professional portrait of Angelo Galang wearing glasses and a dark collared shirt">
+        </figure>
+        <div class="hero-card" aria-label="Career highlights">
+          <div class="metric">
+            <strong>8 years</strong>
+            <span>Total professional experience</span>
           </div>
-
-          <div class="skills-grid">
-            <article class="skill-card"><div class="skill-number">01</div><h3>SEO & Marketing</h3><p>SEO audits, technical SEO, on-page SEO, keyword research, content strategy, local SEO, and email campaigns.</p></article>
-            <article class="skill-card"><div class="skill-number">02</div><h3>Client Success & Accounts</h3><p>Client communication, onboarding, account management, retention support, and stakeholder coordination.</p></article>
-            <article class="skill-card"><div class="skill-number">03</div><h3>Operations & Leadership</h3><p>Team management, workflow improvement, quality control, SLA monitoring, coaching, and multi-project management.</p></article>
-            <article class="skill-card"><div class="skill-number">04</div><h3>Tools & Technical</h3><p>Google Search Console, GA4, Semrush, Mixpanel, Stripe API fundamentals, web design, and LLM fluency.</p></article>
+          <div class="metric">
+            <strong>4 years</strong>
+            <span>SEO and digital marketing</span>
           </div>
-        </div>
-      </section>
-
-      <section class="section" id="experience">
-        <div class="container">
-          <div class="section-heading">
-            <div><p class="section-label">Experience</p><h2>Career timeline focused on growth and execution.</h2></div>
-            <p class="section-intro">Experience across agency operations, SEO delivery, account management, technical onboarding, and customer service leadership.</p>
+          <div class="metric">
+            <strong>60+</strong>
+            <span>Active projects and campaigns managed</span>
           </div>
-
-          <div class="experience-list">
-            <article class="experience-card">
-              <div class="experience-top"><div class="company-lockup"><img class="company-logo" src="assets/qball-logo.png" alt="QBall Digital logo" /><div><h3 class="company-name">QBall Digital</h3><p class="role-title">Operations Manager / Former Head of SEO</p></div></div><span class="date">April 2023 - June 2026</span></div>
-              <ul><li>Managed SEO delivery, client outputs, and performance-related workflows across internal teams and front-facing departments.</li><li>Oversaw SEO execution, including technical recommendations, on-page improvements, reporting support, quality control, and process documentation.</li><li>Improved SEO systems and workflows by adapting internal processes to current search trends, client needs, and delivery requirements.</li><li>Monitored team workload, output quality, and service-level expectations to ensure timely and consistent completion of deliverables.</li><li>Coached team members through feedback, performance guidance, and process support to improve execution quality and professional growth.</li><li>Joined client meetings to align on campaign priorities, communicate progress, and ensure marketing outputs matched client objectives.</li><li>Supported client success through proactive account management, delivery follow-through, and clear communication with stakeholders.</li></ul>
-            </article>
-
-            <article class="experience-card">
-              <div class="experience-top"><div class="company-lockup"><span class="company-logo-text">KD</span><div><h3 class="company-name">Kitana.Digital</h3><p class="role-title">Founder / SEO Consultant</p></div></div><span class="date">Present</span></div>
-              <ul><li>Founded and operate an independent SEO business providing strategy, audits, optimization, and reporting services for clients.</li><li>Manage the full client engagement process, including discovery, SEO planning, execution, performance tracking, and monthly communication.</li><li>Conduct comprehensive SEO audits and build goal-focused strategies based on technical, content, and local search opportunities.</li><li>Handle technical SEO fixes, on-page optimization, metadata updates, internal linking improvements, and website performance recommendations.</li><li>Plan content strategies through keyword research, search intent analysis, blog outlines, content briefs, and page update recommendations.</li><li>Manage local SEO tasks including citation building, Google Business Profile optimization, local landing page improvements, and backlink opportunities.</li><li>Track performance using Google Search Console, GA4, and Semrush, then prepare monthly reports with insights, recommendations, and next-step priorities.</li></ul>
-            </article>
-
-            <article class="experience-card">
-              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/seoreseller-logo.png" alt="SEOReseller.com logo" /><div><h3 class="company-name">SEOReseller.com</h3><p class="role-title">Account Manager</p></div></div><span class="date">October 2022 - April 2023</span></div>
-              <ul><li>Built, maintained, and strengthened relationships with clients, partners, and internal stakeholders through strategic communication and marketing support.</li><li>Assisted in developing business and marketing strategies aligned with partner needs, campaign goals, and service deliverables.</li><li>Coordinated with internal teams to monitor employee progress, task completion, and timely delivery of client requirements.</li><li>Managed an average of 60 active projects or campaigns while balancing deadlines, partner expectations, and internal production capacity.</li><li>Facilitated deliverable completion for partners and clients, ensuring campaign requirements were properly communicated and executed.</li><li>Supported price negotiations, business discussions, and deal coordination with partners and stakeholders.</li></ul>
-            </article>
-
-            <article class="experience-card">
-              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/tdcx-logo.png" alt="TDCX logo" /><div><h3 class="company-name">TDCX Malaysia, Kuala Lumpur</h3><p class="role-title">Senior Account Executive</p></div></div><span class="date">November 2019 - November 2022</span></div>
-              <ul><li>Managed and onboarded new clients by explaining the payment process, product workflows, and service expectations.</li><li>Delivered API integration-related presentations to help clients understand how to use available products and services.</li><li>Supported Tier 1 agents by providing product knowledge, technical guidance, and escalation support for complex customer questions.</li><li>Handled advanced product knowledge escalations using online IT tools, browsers, and internal resources to provide accurate solutions.</li><li>Applied Stripe API fundamentals to support troubleshooting, identify integration issues, and assist with product-related debugging.</li></ul>
-            </article>
-
-            <article class="experience-card">
-              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/alorica-logo.png" alt="Alorica logo" /><div><h3 class="company-name">Alorica</h3><p class="role-title">Team Leader / Manager</p></div></div><span class="date">July 2017 - September 2019</span></div>
-              <ul><li>Supervised and mentored customer service agents to maintain strong performance, quality standards, and service consistency.</li><li>Monitored call metrics and provided coaching to improve efficiency, customer satisfaction, and resolution times.</li><li>Handled escalated customer inquiries and resolved complex issues in a timely and professional manner.</li><li>Conducted regular training sessions to strengthen team skills, product knowledge, and customer service execution.</li></ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="additional">
-        <div class="container">
-          <div class="section-heading">
-            <div><p class="section-label">Additional Experience</p><h2>Customer success and business intelligence support.</h2></div>
-            <p class="section-intro">Sitekick.ai is positioned separately to keep the primary career timeline clean while still showing relevant customer success and operations experience.</p>
-          </div>
-          <div class="additional-layout">
-            <article class="experience-card">
-              <div class="experience-top"><div class="company-lockup"><img class="company-logo-wide" src="assets/sitekick-logo.webp" alt="Sitekick.ai logo" /><div><h3 class="company-name">Sitekick.ai</h3><p class="role-title">Customer Success Manager</p></div></div><span class="date">June 2023 - October 2024</span></div>
-              <ul><li>Oversaw daily customer success operations, including discount requests, refunds, cancellations, and customer issue resolution.</li><li>Supported business operations in a quasi-COO capacity by coordinating customer-facing processes and improving operational follow-through.</li><li>Executed targeted email campaigns and outreach initiatives for promotions, customer engagement, and marketing support.</li><li>Led the development of customer-facing documentation, FAQs, and support resources to improve product understanding and reduce repeated inquiries.</li><li>Analyzed customer behavior and product data in Mixpanel to generate business intelligence insights and identify opportunities for improvement.</li></ul>
-            </article>
-            <article class="education-card"><p class="section-label">Education</p><h3>Bachelor's Degree in Mass Communication</h3><p>STI College Novaliches</p><p>2013 - 2017</p></article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-card">
-          <div><h2>Let’s connect.</h2><p>Available for conversations around SEO operations, account management, customer success, and business process improvement.</p></div>
-          <a class="button" href="mailto:dauntless.angelo0211@gmail.com">dauntless.angelo0211@gmail.com</a>
         </div>
       </div>
     </section>
-  </div>
+
+    <div class="content">
+      <aside aria-label="Skills and education">
+        <section class="section">
+          <h2>Core Strengths</h2>
+          <ul class="skill-list">
+            <li>SEO Project Management</li>
+            <li>Workflow Building</li>
+            <li>Team Coordination</li>
+            <li>Client Communication</li>
+            <li>Deadline Monitoring</li>
+            <li>Approval Tracking</li>
+            <li>Bottleneck Identification</li>
+            <li>Process Improvement</li>
+            <li>Quality Control</li>
+            <li>SOP Creation</li>
+            <li>Content Review</li>
+            <li>Team Accountability</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Project & AI Tools</h2>
+          <ul class="tool-list">
+            <li>ClickUp</li>
+            <li>Notion</li>
+            <li>Plaky</li>
+            <li>Google Workspace</li>
+            <li>Pumble</li>
+            <li>ChatGPT</li>
+            <li>Claude</li>
+            <li>Cursor</li>
+            <li>CRM Platforms</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>SEO & Web Tools</h2>
+          <ul class="tool-list">
+            <li>WordPress</li>
+            <li>GoDaddy</li>
+            <li>Cloudflare</li>
+            <li>Google Analytics 4</li>
+            <li>Google Search Console</li>
+            <li>Google Business Profile</li>
+            <li>Semrush</li>
+            <li>Search Atlas</li>
+            <li>Google Ads</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>SEO Knowledge</h2>
+          <ul class="skill-list">
+            <li>Keyword Research</li>
+            <li>Topic Research</li>
+            <li>Content Planning</li>
+            <li>Article Writing</li>
+            <li>On-Page SEO</li>
+            <li>Internal Linking</li>
+            <li>Backlink Building</li>
+            <li>Content Publishing</li>
+            <li>Local SEO</li>
+            <li>SEO Reporting</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+          <div class="education-card">
+            <strong>Bachelor's Degree in Mass Communication</strong>
+            <span class="small-copy">STI College Novaliches · 2013–2017</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Writing Background</h2>
+          <div class="writing-card">
+            <strong>Former Newspaper Writer</strong>
+            <span class="small-copy">Able to write independently, review articles, improve structure and clarity, and give useful feedback without relying fully on AI.</span>
+          </div>
+        </section>
+      </aside>
+
+      <section aria-label="Professional experience">
+        <div class="section">
+          <h2>Professional Profile</h2>
+          <p>
+            I have led SEO teams, managed client-facing work, built project systems, and handled high-volume campaign delivery. Because I understand the full SEO process, I know what information a specialist needs, how long common tasks should take, and when a task is being held up longer than expected. I enjoy being part of a fun, supportive team and being the person who keeps people organized, solves blockers, and makes sure work continues moving forward.
+          </p>
+          <div class="fit-box">
+            <p><strong>What I bring to an SEO project management role:</strong> practical SEO knowledge, clear communication, respectful follow-up, strong writing skills, organized systems, and the ability to connect specialists, writers, developers, managers, customer success teams, and clients.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Experience</h2>
+
+          <article class="experience-item">
+            <div class="role-row">
+              <div>
+                <h3>Operations Manager · Former Head of SEO</h3>
+                <div class="company">QBall Digital / Visiclix</div>
+              </div>
+              <div class="date">Apr 2023 – Jun 2026</div>
+            </div>
+            <ul>
+              <li>Managed SEO delivery across clients and departments, including workloads, monthly deliverables, deadlines, approvals, project updates, and quality checks.</li>
+              <li>Built and improved SEO systems for keyword and topic research, article production, client approvals, revisions, publishing, backlink work, reporting, and team accountability.</li>
+              <li>Coordinated SEO specialists, writers, developers, customer success managers, and clients so everyone had clear owners, requirements, deadlines, and next steps.</li>
+              <li>Identified bottlenecks early by checking task age, missing information, delayed approvals, workload issues, and unclear handoffs before they affected client commitments.</li>
+              <li>Reviewed articles and SEO work for clarity, completeness, search intent, on-page SEO, internal links, metadata, and client requirements.</li>
+              <li>Used ClickUp and Notion to organize recurring work, project statuses, SOPs, internal guides, approval processes, and team documentation.</li>
+              <li>Used ChatGPT daily and worked with Claude and Cursor to support research, writing, content review, process building, simple tools, and workflow improvement.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="role-row">
+              <div>
+                <h3>Founder · SEO Consultant</h3>
+                <div class="company">Kitana.Digital</div>
+              </div>
+              <div class="date">Present</div>
+            </div>
+            <ul>
+              <li>Manage an independent SEO website and service brand covering client discovery, planning, audits, content, optimization, reporting, and communication.</li>
+              <li>Handle keyword research, content planning, article review, on-page SEO, internal linking, local SEO, backlink opportunities, and performance tracking.</li>
+              <li>Manage website content and updates using WordPress, GoDaddy, Cloudflare, analytics tools, and other website platforms.</li>
+              <li>Build practical AI-assisted workflows while reviewing every final output for accuracy, usefulness, tone, and natural writing.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="role-row">
+              <div>
+                <h3>Account Manager</h3>
+                <div class="company">SEOReseller.com</div>
+              </div>
+              <div class="date">Oct 2022 – Apr 2023</div>
+            </div>
+            <ul>
+              <li>Managed an average of 60 active SEO projects and digital marketing campaigns while balancing deadlines, client expectations, and internal team capacity.</li>
+              <li>Coordinated client requests, deliverables, revisions, approvals, production updates, and communication between partners and delivery teams.</li>
+              <li>Monitored task progress and followed up on delayed work or missing requirements to keep projects moving.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="role-row">
+              <div>
+                <h3>Customer Success Manager</h3>
+                <div class="company">Sitekick.ai</div>
+              </div>
+              <div class="date">Jun 2023 – Oct 2024</div>
+            </div>
+            <ul>
+              <li>Managed daily customer success work, issue resolution, requests, cancellations, refunds, outreach, and customer communication.</li>
+              <li>Created customer-facing documentation, FAQs, email campaigns, and support resources to improve clarity and reduce repeated questions.</li>
+              <li>Supported operational follow-through and used product data to identify service and customer experience improvements.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="role-row">
+              <div>
+                <h3>Senior Account Executive</h3>
+                <div class="company">TDCX Malaysia · Kuala Lumpur</div>
+              </div>
+              <div class="date">Nov 2019 – Nov 2022</div>
+            </div>
+            <ul>
+              <li>Onboarded clients, explained product and payment workflows, supported API-related presentations, and handled advanced customer concerns.</li>
+              <li>Supported frontline agents with product knowledge, technical guidance, escalation handling, and clear customer communication.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="role-row">
+              <div>
+                <h3>Team Leader · Manager</h3>
+                <div class="company">Alorica</div>
+              </div>
+              <div class="date">Jul 2017 – Sep 2019</div>
+            </div>
+            <ul>
+              <li>Managed and coached customer service agents, monitored performance, handled escalations, and supported team training.</li>
+              <li>Helped team members stay accountable while keeping communication respectful, supportive, and focused on solutions.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      Angelo Galang · SEO Project Manager & Operations · <a href="mailto:dauntless.angelo0211@gmail.com">dauntless.angelo0211@gmail.com</a>
+    </footer>
+  </main>
 </body>
 </html>
